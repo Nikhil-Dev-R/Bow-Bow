@@ -144,7 +144,6 @@ fun DetailsView(
         // Owner info
         item {
             dog.apply {
-
                 Spacer(modifier = Modifier.height(24.dp))
                 Title(title = "Owner info")
                 Spacer(modifier = Modifier.height(16.dp))
@@ -163,7 +162,6 @@ fun DetailsView(
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(16.dp, 0.dp, 16.dp, 0.dp),
-                colors = ButtonDefaults.textButtonColors()
             ) {
                 Text(
                     "Adopt me",

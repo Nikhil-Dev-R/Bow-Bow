@@ -9,28 +9,58 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+
+// Light Color Scheme for the Dog App
+val LightColorScheme = lightColorScheme(
+    primary = DogBrown, // Main color for buttons, etc.
+    onPrimary = Color.White, // Text color on top of primary
+    primaryContainer = DogLightBrown, // Lighter shade for containers
+    onPrimaryContainer = Color.Black, // Text color on top of primaryContainer
+    secondary = DogGreen, // Secondary color for accents
+    onSecondary = Color.Black, // Text color on top of secondary
+    secondaryContainer = DogLightBrown,
+    onSecondaryContainer = Color.Black,
+    tertiary = DogBlue, // Another accent color
+    onTertiary = Color.Black, // Text color on top of tertiary
+    tertiaryContainer = DogCream,
+    onTertiaryContainer = Color.Black,
+    background = DogCream, // Main background color
+    onBackground = Color.Black, // Text color on top of background
+    surface = DogCream, // Color for cards, dialogs, etc.
+    onSurface = Color.Black, // Text color on top of surface
+    surfaceVariant = DogLightBrown,
+    onSurfaceVariant = Color.Black,
+    outline = DogBrown,
+    outlineVariant = DogLightBrown,
+    scrim = Color.Black.copy(alpha = 0.5f)
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+// Dark Color Scheme for the Dog App
+val DarkColorScheme = darkColorScheme(
+    primary = DogLightBrown, // Main color for buttons, etc.
+    onPrimary = Color.Black, // Text color on top of primary
+    primaryContainer = DogBrown, // Darker shade for containers
+    onPrimaryContainer = Color.White, // Text color on top of primaryContainer
+    secondary = DogGreen, // Secondary color for accents
+    onSecondary = Color.Black, // Text color on top of secondary
+    secondaryContainer = DogBrown,
+    onSecondaryContainer = Color.White,
+    tertiary = DogBlue, // Another accent color
+    onTertiary = Color.Black, // Text color on top of tertiary
+    tertiaryContainer = DogBrown,
+    onTertiaryContainer = Color.White,
+    background = Color.Black, // Dark background
+    onBackground = DogCream, // Text color on top of background
+    surface = Color.DarkGray, // Darker color for cards, dialogs, etc.
+    onSurface = DogCream, // Text color on top of surface
+    surfaceVariant = DogBrown,
+    onSurfaceVariant = Color.White,
+    outline = DogLightBrown,
+    outlineVariant = DogBrown,
+    scrim = Color.Black.copy(alpha = 0.5f)
 )
 
 @Composable

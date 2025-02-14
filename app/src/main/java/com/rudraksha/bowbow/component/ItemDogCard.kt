@@ -42,7 +42,6 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
             .clip(RoundedCornerShape(16.dp))
             .clickable(onClick = { onItemClicked(dog) }),
         elevation = CardDefaults.elevatedCardElevation(),
-        colors = CardDefaults.elevatedCardColors()
     ) {
         Row(
             modifier = Modifier

@@ -19,7 +19,8 @@ fun AppNavHost(toggleTheme: () -> Unit) {
     val navController = rememberNavController()
     NavHost (
         navController,
-        startDestination = Screen.Home.route) {
+        startDestination = Screen.Home.route
+    ) {
         composable(
             Screen.Home.route,
             exitTransition = {

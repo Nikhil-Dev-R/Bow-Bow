@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,7 +32,6 @@ import com.rudraksha.bowbow.R
 
 @Composable
 fun OwnerCard(name: String, bio: String, image: Int) {
-
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -55,7 +55,7 @@ fun OwnerCard(name: String, bio: String, image: Int) {
         Column(modifier = Modifier) {
             Text(
                 text = name,
-                color = colorResource(id = R.color.text),
+                color = MaterialTheme.colorScheme.onSurface,
                 style = typography.labelMedium,
                 fontWeight = FontWeight.W600,
                 textAlign = TextAlign.Start
@@ -64,7 +64,7 @@ fun OwnerCard(name: String, bio: String, image: Int) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = bio,
-                color = colorResource(id = R.color.text),
+                color = MaterialTheme.colorScheme.onSurface,
                 style = typography.labelMedium
             )
         }
