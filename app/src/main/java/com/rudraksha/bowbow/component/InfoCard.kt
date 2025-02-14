@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,36 +28,36 @@ import androidx.compose.ui.unit.dp
 import com.rudraksha.bowbow.R
 
 @Composable
-fun InfoCard(title: String, value: String) {
-    Box(
+fun InfoCard(title: String, value: String, containerColor: Color = MaterialTheme.colorScheme.primaryContainer) {
+    Card (
         modifier = Modifier
             .size(90.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(color = colorResource(id = R.color.card))
+            .background(color = MaterialTheme.colorScheme.primaryContainer)
             .padding(12.dp),
-        contentAlignment = Alignment.Center
+        colors = CardColors(
+            containerColor = containerColor,
+            contentColor = MaterialTheme.colorScheme.onSurface,
+            disabledContainerColor = MaterialTheme.colorScheme.primaryContainer,
+            disabledContentColor = MaterialTheme.colorScheme.onSurface
+        )
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
-            modifier = Modifier.wrapContentWidth()
+            modifier = Modifier.wrapContentWidth().background(color = containerColor),
         ) {
-            Text(
+            BasicText(
                 text = value,
                 modifier = Modifier.fillMaxWidth(),
-                color = colorResource(id = R.color.text),
                 style = MaterialTheme.typography.labelMedium,
-                fontWeight = FontWeight.W600,
-                textAlign = TextAlign.Center
             )
 
             Spacer(modifier = Modifier.height(4.dp))
 
-            Text(
+            BasicText(
                 text = title,
                 modifier = Modifier.fillMaxWidth(),
-                color = Color.Gray,
                 style = MaterialTheme.typography.titleMedium,
-                textAlign = TextAlign.Center
             )
         }
     }

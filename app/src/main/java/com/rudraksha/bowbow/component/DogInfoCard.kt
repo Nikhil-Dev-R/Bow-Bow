@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,7 +35,7 @@ fun DogInfoCard(name: String, gender: String, location: String) {
             Text(
                 text = name,
                 modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
-                color = MaterialTheme.colorScheme.surface,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.bodyLarge
             )
@@ -41,10 +43,8 @@ fun DogInfoCard(name: String, gender: String, location: String) {
 
             Row(verticalAlignment = Alignment.Bottom) {
 
-                val locationIcon: Painter = painterResource(id = R.drawable.ic_location)
-
                 Icon(
-                    painter = locationIcon,
+                    imageVector = Icons.Filled.LocationOn,
                     contentDescription = null,
                     modifier = Modifier.size(16.dp, 16.dp),
                     tint = Color.Red
@@ -53,7 +53,7 @@ fun DogInfoCard(name: String, gender: String, location: String) {
                 Text(
                     text = location,
                     modifier = Modifier.padding(8.dp, 12.dp, 12.dp, 0.dp),
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onSurface,
                     style = MaterialTheme.typography.labelLarge
                 )
             }
@@ -63,7 +63,7 @@ fun DogInfoCard(name: String, gender: String, location: String) {
             Text(
                 text = "12 mins ago",
                 modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
-                color = MaterialTheme.colorScheme.surface,
+                color = MaterialTheme.colorScheme.onSurface,
                 style = MaterialTheme.typography.labelSmall
             )
         }

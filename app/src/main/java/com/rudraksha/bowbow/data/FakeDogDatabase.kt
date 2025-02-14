@@ -5,7 +5,7 @@ import com.rudraksha.bowbow.model.Dog
 import com.rudraksha.bowbow.model.Owner
 
 object FakeDogDatabase {
-    val owner = Owner("Rudra", "Pet Doctor & Lover", R.drawable.owner)
+    val owner = Owner("Rudra", "Pet Doctor & Lover", R.drawable.dog_owner)
     val dogList = listOf(
         Dog(
             0,

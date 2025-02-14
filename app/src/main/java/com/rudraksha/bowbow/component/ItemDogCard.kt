@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -47,7 +49,6 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-
             val image: Painter = painterResource(id = dog.image)
             Image(
                 modifier = Modifier
@@ -65,7 +66,7 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
                 Text(
                     text = dog.name,
                     modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontWeight = FontWeight.Bold,
                     style = typography.labelSmall
                 )
@@ -78,16 +79,14 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
                         append(dog.gender)
                     },
                     modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onSurface,
                     style = typography.labelMedium
                 )
 
                 Row(verticalAlignment = Alignment.Bottom) {
 
-                    val location: Painter = painterResource(id = R.drawable.ic_location)
-
                     Icon(
-                        painter = location,
+                        imageVector = Icons.Filled.LocationOn,
                         contentDescription = null,
                         modifier = Modifier.size(16.dp, 16.dp),
                         tint = Color.Red
@@ -96,7 +95,7 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
                     Text(
                         text = dog.location,
                         modifier = Modifier.padding(8.dp, 12.dp, 12.dp, 0.dp),
-                        color = MaterialTheme.colorScheme.surface,
+                        color = MaterialTheme.colorScheme.onSurface,
                         style = typography.labelMedium
                     )
                 }

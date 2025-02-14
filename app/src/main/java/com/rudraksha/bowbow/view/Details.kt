@@ -46,7 +46,6 @@ import com.rudraksha.bowbow.data.FakeDogDatabase
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Details(navController: NavController, id: Int) {
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -61,7 +60,7 @@ fun Details(navController: NavController, id: Int) {
                             .clickable {
                                 navController.navigateUp()
                             },
-                        tint = colorResource(id = R.color.text)
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 }
             )
@@ -79,7 +78,7 @@ fun DetailsView(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.background))
+            .background(MaterialTheme.colorScheme.background)
             .padding(padding)
     ) {
         val dog = FakeDogDatabase.dogList[id]
@@ -87,7 +86,6 @@ fun DetailsView(
         // Basic details
         item {
             dog.apply {
-
                 val dogImage: Painter = painterResource(id = dog.image)
                 Image(
                     modifier = Modifier
@@ -116,7 +114,7 @@ fun DetailsView(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp, 0.dp, 16.dp, 0.dp),
-                    color = colorResource(id = R.color.text),
+                    color = MaterialTheme.colorScheme.onSurface,
                     style = MaterialTheme.typography.bodyLarge,
                     textAlign = TextAlign.Start
                 )
@@ -137,7 +135,7 @@ fun DetailsView(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     InfoCard(title = "Age", value = dog.age.toString().plus(" yrs"))
-                    InfoCard(title = "Color", value = color)
+                    InfoCard(title = "Color", value = color,)
                     InfoCard(title = "Weight", value = weight.toString().plus("Kg"))
                 }
             }
@@ -167,7 +165,10 @@ fun DetailsView(
                     .padding(16.dp, 0.dp, 16.dp, 0.dp),
                 colors = ButtonDefaults.textButtonColors()
             ) {
-                Text("Adopt me")
+                Text(
+                    "Adopt me",
+                    color = MaterialTheme.colorScheme.onSurface
+                )
             }
             Spacer(modifier = Modifier.height(24.dp))
         }
@@ -181,8 +182,8 @@ fun Title(title: String) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp, 0.dp, 0.dp, 0.dp),
-        color = colorResource(id = R.color.text),
-        style = MaterialTheme.typography.labelMedium,
+        color = MaterialTheme.colorScheme.primary,
+        style = MaterialTheme.typography.titleLarge,
         fontWeight = FontWeight.W600,
         textAlign = TextAlign.Start
     )
